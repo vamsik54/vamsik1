@@ -1,0 +1,17 @@
+@CHARSET "ISO-8859-1";
+html{
+	background-color:#C0C0C0;
+}
+#adminHome{
+	background-color:#C0C0C0;
+}
+  table td{
+  padding:10;
+  }
+  table tr td button{
+  width:350%;
+  }
+  table{
+  margin-left:30%;
+  margin-top:13%;
+  }
