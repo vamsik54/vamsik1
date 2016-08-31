@@ -63,7 +63,7 @@ public class AdminController {
 		Path path=Paths.get("C://Users//vamsi//workspace1//BooksProject//src//main//webapp//WEB-INF//resources//images//"+item.getItemId()+".jpg");
 		if(itemImage !=null && !itemImage.isEmpty()){
 			itemImage.transferTo(new File(path.toString()));
-			System.out.println("Image added");
+			System.out.println("image added");
 		}
 		System.out.println("Product added");
 		return "redirect:/ViewProducts";
