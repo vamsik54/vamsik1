@@ -120,6 +120,13 @@ public class HomeController {
 		return new ModelAndView("contactUs");
 		
 	}
+	@RequestMapping("/discount")
+	public ModelAndView discount()
+	{
+		System.out.println("redirected to BookStore.com discount page");
+		return new ModelAndView("discount");
+		
+	}
 
 	@Autowired
 	ActionAdventureServiceImpl actionAdventureServiceImpl;

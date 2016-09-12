@@ -2,6 +2,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@include file="customerHomeHeader.jsp"%>
+<!-- 
+<%=session.getAttribute("username")%>
+request.getParameter("username") -->
+<!--  Java Script code for displaying welcome username -->
+<head>
+
+<script language="javascript" type="text/javascript">
+alert(<c:out value="${sessionScope.username}"></c:out>)
+<!-- alert("welcome to bookstore.com") -->
+</script>
+</head>
+<c:out value="${sessionScope.username}">
+</c:out>
 <% 
  response.setHeader("pragma", "no-cache");
  response.setHeader("Cache-control", "no-cache, no-store, must-revalidate");

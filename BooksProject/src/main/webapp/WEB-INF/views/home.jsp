@@ -27,8 +27,8 @@
             <div class="content_left_section">
             	<h1>Discounts</h1>
                 <ul>
-                    <li><a href="discount.html">Upto 20% Discount</a></li>
-                    <li><a href="discount.html">More Than 20% Discount</a></li>
+                    <li><a href="discount">Upto 20% Discount</a></li>
+                    <li><a href="discount">More Than 20% Discount</a></li>
 					
                 </ul>
             </div>

@@ -16,14 +16,9 @@
   </script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
   </script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-  <script>document.write('<base href="' + document.location + '" />');</script>
-    <link href="./resources/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="./resources/css/style.css" rel="stylesheet" media="screen">
-    <script data-require="angular.js@1.0.x" src="http://code.angularjs.org/1.0.7/angular.min.js" data-semver="1.0.7"></script>
+  
 </head>
 <body>
-
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -40,11 +35,7 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-				<li class="current">
-					<a href="#">Home
-					</a>
-				</li>
-			
+				
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#"> Categories 	
 						<span class="caret">
@@ -60,23 +51,43 @@
 					</ul>
 				</li>
 				<li>
-					<a href="#">All Products</a>
-				</li>
-				<li>
 					<a href="aboutUs">AboutUs</a>
 				</li>
 				<li>
 					<a href="contactUs">Contact Us</a>
 				</li>
 		</ul>
-		<ul class="nav navbar-nav navbar-right">
-			<li>
-				<a href="logout">
-					<span class="glyphicon glyphicon-log-in">
-					</span> Logout
-				</a>
-			</li>
-		</ul>
 			</div>
 		</div>
 	</nav>
+			 <div id="container">
+    
+    <div id="content">
+    <div id="content_left">
+        	<div class="content_left_section">
+            	<h1>Categories</h1>
+                <ul>
+                    <li><a href="toViewCategoryWise?category=Category1">Action & Adventure Books</a></li>
+                    <li><a href="toViewCategoryWise?category=Category2">Biographies</a></li>
+            	</ul>
+            </div>
+            <div class="content_left_section">
+            	<h1>Discounts</h1>
+                <ul>
+                    <li><a href="discount">Upto 20% Discount</a></li>
+                    <li><a href="discount">More Than 20% Discount</a></li>
+					
+                </ul>
+            </div>
+        </div>
+        <div id="content_right">
+        <br><br><br><br><br><br><br><br>
+		<h1>Discount Books</h1>
+		<p> Hey!! Currently No discount books available.. Thanks for shopping with BookStore.com.
+		
+		</p>
+			
+	</div> 
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+ <%@include file="footer.jsp"%>

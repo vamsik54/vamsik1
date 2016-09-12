@@ -57,10 +57,10 @@
 					<a href="CustomerLogin">All Products</a>
 				</li>
 				<li>
-					<a href="about_us.html">AboutUs</a>
+					<a href="aboutUs">AboutUs</a>
 				</li>
 				<li>
-					<a href="contact_us.html">Contact Us</a>
+					<a href="contactUs">Contact Us</a>
 				</li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">

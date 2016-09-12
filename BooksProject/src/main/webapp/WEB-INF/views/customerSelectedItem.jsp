@@ -59,13 +59,16 @@
 					<a href="#">Home
 					</a>
 				</li>
-				<!-- 
+			
 				<li>
-					<a href="about_us.html">AboutUs</a>
+					<a href="aboutUs">AboutUs</a>
 				</li>
 				<li>
-					<a href="contact_us.html">Contact Us</a>
-				</li>-->
+					<a href="contactUs">Contact Us</a>
+				</li>
+				
+			</ul>
+			
 				<ul class="nav navbar-nav navbar-right">
 			<li>
 				<a href="logout">
@@ -73,6 +76,12 @@
 					</span> Logout
 				</a>
 			</li>
+			<li>
+					<a href="#">
+						<span class="glyphicon glyphicon-shopping-cart">
+						</span>Add To Cart
+					</a>
+				</li>
 		</ul>
 		</div>
 		</div>
