@@ -70,6 +70,12 @@
 				</li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
+		<li>
+					<a href="viewCart">
+						<span class="glyphicon glyphicon-shopping-cart">
+						</span>View Cart
+					</a>
+				</li>
 			<li>
 				<a href="logout">
 					<span class="glyphicon glyphicon-log-in">

@@ -6,16 +6,17 @@
 <html >
 	<head>
 		<title>BookStrore.com SignUp</title>
-			<link href="<c:url value="/resources/css/loginStyle.css" />" rel="stylesheet">   
+			<link href="<c:url value="/resources/css/signUpPage.css" />" rel="stylesheet">   
+			
 	</head>
 	<body>
 		<div class="loginPage">
 			<div class="form">
-				<form:form class="loginForm" action="Register" commandName="customerObj" method="POST">
+				<form:form class="loginForm" commandName="customer">
 				<form:input type="text" placeholder="username" path="username"></form:input><form:errors path="username" style="color:red"></form:errors>
 				<form:password path="password"  placeholder="password"></form:password><form:errors path="password" style="color:red"></form:errors>
 				<form:input type="email" path="emailid"  placeholder="Email Id"></form:input><form:errors path="emailid" style="color:red"></form:errors>
-					<button>Register</button>
+					<input type="submit" class="button1" name="_eventId_submit" value="Register"/>
 				</form:form>
 			</div>
 		</div>

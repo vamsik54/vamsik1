@@ -1,15 +1,21 @@
 package com.niit.model;
 
+import java.io.Serializable;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-public class Customer {
+public class Customer implements Serializable {
+
+	private static final long serialVersionUID = 1193718706654992033L;
 	@Id@GeneratedValue
 	private int customerid;
 	@NotEmpty(message="username should not be empty")
@@ -18,15 +24,16 @@ public class Customer {
 	private String emailid;
 	private boolean enabled;
 
-//	@OneToOne
-//	@JoinColumn(name="mycartId")
-//	private MyCart mycart;
-//	public MyCart getMycart() {
-//		return mycart;
-//	}
-//	public void setMycart(MyCart mycart) {
-//		this.mycart = mycart;
-//	}
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="cartId")
+	@JsonIgnore
+	private Cart cart;
+	public Cart getCart() {
+		return cart;
+	}
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
 	public boolean isEnabled() {
 		return enabled;
 	}

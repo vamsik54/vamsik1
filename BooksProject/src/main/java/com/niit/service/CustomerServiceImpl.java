@@ -13,13 +13,17 @@ public class CustomerServiceImpl implements CustomerService{
 
 	@Autowired
 	CustomerDao customerDao;
-	public void addCustomer(Customer customer) {
+	public String addCustomer(Customer customer) {
 		
-		customerDao.addCustomer(customer);
+		return customerDao.addCustomer(customer);
 	}
 	public List<Customer> viewCustomers() {
 	List<Customer> list=customerDao.viewCustomers();
 		return list;
+	}
+	public Customer getCustomerByName(String name) {
+		return customerDao.getCustomerByName(name);
+		
 	}
 
 }

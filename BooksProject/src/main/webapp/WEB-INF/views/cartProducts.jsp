@@ -1,18 +1,13 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <% 
  response.setHeader("pragma", "no-cache");
  response.setHeader("Cache-control", "no-cache, no-store, must-revalidate");
  response.setHeader("Expires", "0");
  %>
-  <title>BookStore.com AllProducts Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <head>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<link href="<c:url value="/resources/css/homeStyle.css" />">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -20,24 +15,17 @@
     <link href="./resources/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="./resources/css/style.css" rel="stylesheet" media="screen">
     <script data-require="angular.js@1.0.x" src="http://code.angularjs.org/1.0.7/angular.min.js" data-semver="1.0.7"></script>
-
-  <style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }    
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
-	.carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-      width: 70%;
-      margin: auto;
-  </style>
-</head>
+<script>
+angular.module('myApp',[]).controller('dataCtrl',function($scope)
+		{
+	
+		$scope.names=${viewCartKey};
+		$scope.orderByMe=function(x)
+		{
+			$scope.myOrderBy=x;
+			}
+		});
+</script>
 <body>
 <nav class="navbar navbar-inverse">
 		<div class="container-fluid">
@@ -55,22 +43,37 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-				<li class="current">
+				<!-- <li class="current">
 					<a href="#">Home
 					</a>
-				</li>
+				</li> -->
 			
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#"> Categories 	
+						<span class="caret">
+						</span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="toViewCategoryWise?category=Category1">Action and Adventure</a>
+						</li>
+						<li>
+							<a href="toViewCategoryWise?category=Category2">Biographies</a>
+						</li>
+					</ul>
+				</li>
+				<!-- <li>
+					<a href="#">All Products</a>
+				</li> -->
 				<li>
 					<a href="aboutUs">AboutUs</a>
 				</li>
 				<li>
 					<a href="contactUs">Contact Us</a>
 				</li>
-				
-			</ul>
-			
-				<ul class="nav navbar-nav navbar-right">
-				<li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+		<li>
 					<a href="viewCart">
 						<span class="glyphicon glyphicon-shopping-cart">
 						</span>View Cart
@@ -82,39 +85,35 @@
 					</span> Logout
 				</a>
 			</li>
-			
 		</ul>
-		</div>
+			</div>
 		</div>
 	</nav>
+<div>
 <div class="container">
-<div ng-app="myApp" ng-controller="dataCtrl">
-  <div>
+  <div ng-app="myApp" ng-controller="dataCtrl">
+Enter Name/Email ID: <input type="text"  ng-model="search">&nbsp&nbsp<span class="glyphicon glyphicon-search"></span>
     <hr></hr>
     <table class="table table-striped">
     <tr>
-    <th>Item Id</th>
-    <th>Item Name</th>
-    <th>Description</th>
-    <th>Category</th>
+    <th>ProductId</th>
     <th>Price</th>
+    <th>Quantity</th>
     <th>Image</th>
-    <th>Add To Cart </th>
+    <th>Delete Item </th>
     </tr>
-        <tr>
-             <td>${item.itemId}</td>
-            <td>${item.itemName}</td>
-            <td>${item.description}</td>
-            <td>${item.category}</td>
-            <td>${item.price}</td>
-            <td><a href=""/>	
-            		<img src="resources/images/${item.itemId}.jpg" style="width:100px;height:100px;"/>
-            	</a>
+        <tr ng-repeat="resource in names | filter:search">
+             <td>{{resource.cartItemId}}</td>
+             <td>{{resource.totalPrice}}</td>
+            <td>{{resource.quantity}}</td>
+            <td><img src="resources/images/{{resource.image}}.jpg" style="width:100px;height:100px;"/></td>
+             <td><a href="deleteItem?id={{resource.cartItemId}}" onclick="return confirm('confirm to delete');">Delete</a></td> 
             
-            </td>
-            <td><a href="addtocart?id=${item.itemId}">Add This Item To Cart</a></td>
         </tr>    
     </table>
-</div> 
+</div>
+</div>
+</div>
 </body>
-</html>
+<br></br><br></br><br></br><br></br>
+<%@include file="footer.jsp"%>
